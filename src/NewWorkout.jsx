@@ -14,12 +14,12 @@ function NewWorkout() {
       }, []);
 
 
-      const listItems = exercises.map(exc => <li key={exc.exercise} class="exercise"><span class="exercise-description">{exc.exercise}</span> {exc.description}</li>);
+      const listItems = exercises.map(exc => <li key={exc.exercise} className="exercise"><span className="exercise-description">{exc.exercise}</span> {exc.description}</li>);
 
     return (
       <>
         <h2>Choose a Workout</h2>
-        <ul class="exercise-list">{listItems}</ul>
+        <ul className="exercise-list">{listItems}</ul>
       </>
     )
   }
