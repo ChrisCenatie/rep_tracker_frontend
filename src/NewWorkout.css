@@ -1,0 +1,20 @@
+.exercise-list {
+    list-style: none;
+    text-align: left;
+}
+
+.exercise {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0);
+    &:hover {
+        border: 1px solid #6297889c;
+        background-color: #6297889c;
+    }
+}
+
+.exercise-description {
+    font-size: 1.5rem;
+}

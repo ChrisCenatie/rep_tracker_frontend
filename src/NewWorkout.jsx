@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import './NewWorkout.css'
+
 function NewWorkout() {
     const [exercises, setExercises] = useState([]);
     useEffect(() => {
@@ -12,12 +14,12 @@ function NewWorkout() {
       }, []);
 
 
-      const listItems = exercises.map(exc => <li key={exc.exercise}><strong>{exc.exercise}</strong>: {exc.description}</li>);
+      const listItems = exercises.map(exc => <li key={exc.exercise} class="exercise"><span class="exercise-description">{exc.exercise}</span> {exc.description}</li>);
 
     return (
       <>
         <h2>Choose a Workout</h2>
-        <ul>{listItems}</ul>
+        <ul class="exercise-list">{listItems}</ul>
       </>
     )
   }
