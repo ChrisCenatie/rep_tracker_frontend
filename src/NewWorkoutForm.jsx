@@ -41,7 +41,27 @@ function NewWorkoutForm({exercise, exerciseList}) {
         <option key={exc.exercise} value={exc.exercise}>{exc.exercise}</option>
     );
 
-    return <form className="form-container">
+    const getCookie = (name='csrftoken') => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const response = fetch("/api/v1/workouts/create/", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie() // Include the CSRF token in the header
+            },
+            body: JSON.stringify({ username: "example" }),
+        });
+
+        console.log('submitting event', response.status);
+    };
+
+    return <form className="form-container" onSubmit={handleSubmit}>
         <label>
             Choose a workout:
             <select name="workout" id="workout" value={selectedExercise} onChange={e => setSelectedExercise(e.target.value)}>
