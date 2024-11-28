@@ -1,0 +1,28 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.set-list-container {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    list-style: none;
+}
+
+.set-item--remove {
+    margin-left: 1rem;
+    cursor: pointer;
+    color: #f00;
+    padding: 1px;
+}
+
+.set-item--add {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    color: #5bbf17;
+    padding: 1px;
+}
